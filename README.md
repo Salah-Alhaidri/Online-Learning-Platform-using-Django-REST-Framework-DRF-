@@ -29,3 +29,41 @@ Follow these steps to set up the project locally:
 ```bash
 git clone https://github.com/your-username/online-learning-platform.git
 cd online-learning-platform
+
+# API Endpoints
+
+## Authentication
+- **Login**: `POST /api-token-auth/` (Returns a token for authenticated users)
+- **Logout**: Not implemented (Tokens are stateless and must be deleted client-side).
+
+## Courses
+- **List Courses**: `GET /generic/courses/`
+- **Create Course**: `POST /generic/courses/` (Instructors only)
+- **Course Details**: `GET /generic/courses/<int:pk>/`
+- **Update Course**: `PUT /generic/courses/<int:pk>/` (Instructors only)
+- **Delete Course**: `DELETE /generic/courses/<int:pk>/` (Instructors only)
+
+## Enrollments
+- **Enroll in a Course**: `POST /enrollments/enroll/` (Students only)
+- **List Enrollments**: `GET /enrollments/`
+
+## Quizzes
+- **Submit a Quiz**: `POST /quizzes/<int:pk>/submit/` (Students only)
+- **List Quizzes**: `GET /quizzes/`
+
+## Modules and Lessons
+- **List Modules**: `GET /modules/`
+- **List Lessons**: `GET /lessons/`
+
+---
+
+# Usage Examples
+
+## Enroll in a Course
+To enroll in a course, send a `POST` request to `/enrollments/enroll/` with the course ID:
+
+```bash
+curl -X POST http://127.0.0.1:8000/enrollments/enroll/ \
+     -H "Authorization: Token YOUR_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"course_id": 1}'
