@@ -20,15 +20,9 @@ This project is an **Online Learning Platform** built using Django and Django RE
 - **Pagination**: Custom pagination for large datasets
 - **Filtering and Searching**: Django Filter and DRF's built-in search functionality
 
-## Installation
 
-Follow these steps to set up the project locally:
 
 ### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/online-learning-platform.git
-cd online-learning-platform
 
 # API Endpoints
 
@@ -56,14 +50,8 @@ cd online-learning-platform
 - **List Lessons**: `GET /lessons/`
 
 ---
-
-# Usage Examples
-
-## Enroll in a Course
-To enroll in a course, send a `POST` request to `/enrollments/enroll/` with the course ID:
+## Installation
 
 ```bash
-curl -X POST http://127.0.0.1:8000/enrollments/enroll/ \
-     -H "Authorization: Token YOUR_TOKEN" \
-     -H "Content-Type: application/json" \
-     -d '{"course_id": 1}'
+git clone https://github.com/your-username/online-learning-platform.git
+cd online-learning-platform
